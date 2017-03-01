@@ -9,7 +9,6 @@ public class Admin {
     private String adminPassword;
 
     public int getAdminId() {
-        String user;
         return adminId;
     }
 
