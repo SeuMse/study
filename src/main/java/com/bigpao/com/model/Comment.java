@@ -10,7 +10,7 @@ public class Comment {
     private int courseId;
     private int stuId;
     private Date commentDate;
-    private String commentString;
+    private String commentContent;
 
     public int getCommentId()  {
         return commentId;
@@ -44,11 +44,12 @@ public class Comment {
         this.commentDate = commentDate;
     }
 
-    public String getCommentString() {
-        return commentString;
+    public String getCommentContent() {
+        return commentContent;
     }
 
-    public void setCommentString(String commentString) {
-        this.commentString = commentString;
+    public void setCommentContent(String commentContent) {
+        this.commentContent = commentContent;
     }
+
 }
