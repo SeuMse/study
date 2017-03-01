@@ -1,5 +1,6 @@
-package com.bigpao.com;
+package com.bigpao.com.dao;
 
+import com.bigpao.com.StudyApplication;
 import com.bigpao.com.dao.CommentDao;
 import com.bigpao.com.model.Comment;
 import com.bigpao.com.model.Course;

@@ -1,6 +1,6 @@
-package com.bigpao.com;
+package com.bigpao.com.dao;
 
-import com.bigpao.com.dao.TeachDao;
+import com.bigpao.com.StudyApplication;
 import com.bigpao.com.model.Teach;
 import org.junit.Test;
 import org.junit.runner.RunWith;
