@@ -20,6 +20,9 @@ public class CommentDaoTest {
     @Autowired
     CommentDao commentDao;
 
+    /**
+     * CommentDao.selectCommentsByCourse测试
+     */
     @Test
     public void selectTest(){
         Course course=new Course();
@@ -27,6 +30,10 @@ public class CommentDaoTest {
         commentDao.selectCommentsByCourse(course);
     }
 
+
+    /**
+     * CommentDao.insertComment(Comment comment)测试
+     */
     @Test
     public void insertTest(){
         Comment comment=new Comment();
@@ -38,6 +45,9 @@ public class CommentDaoTest {
     }
 
 
+    /**
+     * CommentDao.deleteComment(Comment comment)测试
+     */
     @Test
     public void deleteTest(){
         Comment comment=new Comment();

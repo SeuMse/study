@@ -17,6 +17,9 @@ public class TeachDaoTest {
     @Autowired
     TeachDao teachDao;
 
+    /**
+     * TeachDao.insertTeach(Teach teach)测试
+     */
     @Test
     public void insertTest(){
         Teach teach=new Teach();
@@ -27,11 +30,19 @@ public class TeachDaoTest {
         teachDao.insertTeach(teach);
     }
 
+    /**
+     * TeachDao.selectTeachs()测试
+     */
     @Test
     public void selectTest(){
         teachDao.selectTeachs();
     }
 
+
+
+    /**
+     * TeachDao.updateTeach(Teach teach)测试
+     */
     @Test
     public void updateTest(){
         Teach teach=new Teach();
@@ -43,6 +54,10 @@ public class TeachDaoTest {
         teachDao.updateTeach(teach);
     }
 
+
+    /**
+     * TeachDao.deleteTeach(Teach teach)测试
+     */
     @Test
     public void delete(){
         Teach teach=new Teach();
