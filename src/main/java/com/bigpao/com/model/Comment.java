@@ -12,11 +12,11 @@ public class Comment {
     private Date commentDate;
     private String commentString;
 
-    public int getCommentId() {
+    public int getCommentId()  {
         return commentId;
     }
 
-    public void setCommentId(int commentId) {
+    public void setCommentId (int commentId) {
         this.commentId = commentId;
     }
 
