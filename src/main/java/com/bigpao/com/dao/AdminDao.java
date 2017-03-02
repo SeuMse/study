@@ -27,4 +27,20 @@ public interface AdminDao {
     @Select({"select",SELECT_FIELDS,"from",TABLE_NAME})
     List<Admin> seleceAllAdmin();
 
+    /**
+     * 查询管理员的数量
+     * @return int
+     */
+    @Select({"select count(admin_id) from",TABLE_NAME})
+    int getAdminNumber();
+
+
+    /**
+     * 分页查询管理员
+     * @param offset 偏移值
+     * @param limit   一页管理员数量
+     * @return List<Admin>
+     */
+    @Select({"select",SELECT_FIELDS,"from",TABLE_NAME,"limit #{offset},#{limit}"})
+    List<Admin> selectLimitAdmin(@Param("offset") int offset,@Param(value = "limit") int limit);
 }
