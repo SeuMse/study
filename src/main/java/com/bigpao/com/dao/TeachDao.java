@@ -1,5 +1,6 @@
 package com.bigpao.com.dao;
 
+import com.bigpao.com.model.Admin;
 import com.bigpao.com.model.Teach;
 import org.apache.ibatis.annotations.*;
 
@@ -17,6 +18,7 @@ public interface TeachDao {
     String TABLE_NAME="teach";
     String INSERT_FIELDS="teach_name,teach_email,teach_introduce,teach_headurl";
     String SELECT_FIELDS="teach_id,"+INSERT_FIELDS;
+    String ADMIN_SELECT_FIELDS="teach_id,teach_name,teach_email,teach_introduce";
 
     /**
      * 查询全部的Teach实例
@@ -54,4 +56,21 @@ public interface TeachDao {
              " set teach_name=#{teachName},teach_email=#{teachEmail},teach_introduce=#{teachIntroduce},teach_headurl=#{teachHeadurl}",
              "where teach_id=#{teachId}"})
     int updateTeach(Teach teach);
+
+    /**
+     * 查询教师的数量
+     * @return int
+     */
+    @Select({"select count(teach_id) from",TABLE_NAME})
+    int getTeachNumber();
+
+
+    /**
+     * 分页查询教师
+     * @param offset 偏移值
+     * @param limit   一页教师数量
+     * @return List<Admin>
+     */
+    @Select({"select",ADMIN_SELECT_FIELDS,"from",TABLE_NAME,"limit #{offset},#{limit}"})
+    List<Teach> selectLimitTeach(@Param("offset") int offset, @Param(value = "limit") int limit);
 }

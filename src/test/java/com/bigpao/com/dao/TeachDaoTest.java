@@ -64,4 +64,21 @@ public class TeachDaoTest {
         teach.setTeachId(1);
         teachDao.deleteTeach(teach);
     }
+
+    /**
+     * TeachDao.getTeachNumber()测试
+     */
+    @Test
+    public void getTeachNumberTest(){
+        teachDao.getTeachNumber();
+    }
+
+
+    /**
+     * TeachDao.selectLimitTeach(int offset,int limit)测试
+     */
+    @Test
+    public void selectLimitTeachTest(){
+        teachDao.selectLimitTeach(0,10);
+    }
 }
