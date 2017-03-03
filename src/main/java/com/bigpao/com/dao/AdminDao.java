@@ -19,7 +19,7 @@ public interface AdminDao {
     int addAdmin(Admin admin);
 
     @Update({"update",TABLE_NAME,"set admin_password=#{adminPassword} where admin_id=#{adminId}"})
-    void updateAdminPasswordById(int adminId);
+    void updateAdminPasswordById(@Param("adminPassword") String adminPassword,@Param("adminId") String admin_id);
 
     @Delete({"delete from ",TABLE_NAME,"where admin_Id=#{adminId}"})
     void deleteAdminById(int adminId);
@@ -43,4 +43,13 @@ public interface AdminDao {
      */
     @Select({"select",SELECT_FIELDS,"from",TABLE_NAME,"limit #{offset},#{limit}"})
     List<Admin> selectLimitAdmin(@Param("offset") int offset,@Param(value = "limit") int limit);
+  
+
+   /* @Select({"select",SELECT_FIELDS,"from",TABLE_NAME,"where admin_name=#{adminName} and admin_password=#{adminPassword}"})
+    List<Admin> findAdminByadminNameAndadminPassword(String adminName,String adminPassword);*/
+   @Select({"select",SELECT_FIELDS,"from",TABLE_NAME,"where admin_name=#{adminName} and admin_password=#{adminPassword}"})
+   List<Admin> findAdminByadminNameAndadminPassword(@Param("adminName") String adminName,@Param("adminPassword") String adminPassword);//多个参数用@param指明
+
+
+
 }
