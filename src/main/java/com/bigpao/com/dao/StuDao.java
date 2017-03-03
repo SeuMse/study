@@ -23,7 +23,7 @@ public interface StuDao {
     void updateStupasswordById(int stuId);
 
     @Delete({"delete from",TABLE_NAME,"where stu_id=#{stuId}"})
-    void deleteStuById(int stuId);
+    int deleteStuById(int stuId);
 
     @Select({"select",SELECT_FIELDS,"from",TABLE_NAME})
     List<Stu> seleceAllStu();

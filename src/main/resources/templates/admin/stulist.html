@@ -147,6 +147,27 @@
            f.style.visibility="visible";
          }
       </script>-->
+ <script type="text/javascript">
+     var httpRequest = new XMLHttpRequest();
+     //var ifr=document.getElementsByName("content")[0];
+    function delete_(button) {
+
+        httpRequest.onreadystatechange = slove;
+        httpRequest.open('GET', "/admin/deleteStu/"+button.id);
+        httpRequest.send();
+    }
+    function slove() {
+        if (httpRequest.readyState === XMLHttpRequest.DONE) {
+            if (httpRequest.status === 200) {
+                //ifr.setAttribute("src","www.baidu.com");
+                //document.load("www.baidu.com");
+                window.location="0";
+            } else {
+                alert('There was a problem with the request.');
+            }
+        }
+    }
+ </script>
     <link type="text/css" href="../list/css/layout.css" rel="stylesheet" />
 
 
@@ -173,7 +194,7 @@
         <tr>
             <td>${stu.stuName}</td>
             <td>${stu.stuEmail}</td>
-            <td><input type="button" value="删除" onclick="delete_(this.parentNode.parentNode)"></td>
+            <td><input id="${stu.stuId}" type="button" value="删除" onclick="delete_(this)"></td>
         </tr>
         #end
         <!--<td>老皮</td>

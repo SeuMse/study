@@ -33,4 +33,19 @@ public class StuService {
     public int findStuNumber(){
         return stuDao.getStuNumber();
     }
+
+
+    /**
+     * 删除学生
+     * @return int
+     */
+    public int deleteStuById(int id){
+        int result;
+        try{
+            result=stuDao.deleteStuById(id);
+        }catch (Exception e){
+            result=-1;
+        }
+        return result;
+    }
 }

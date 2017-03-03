@@ -116,4 +116,17 @@ public class HomeController {
         model.addAttribute("offsetPage",offsetPage);
         return "admin/commentlist";
     }
+
+    @RequestMapping({"admin/deleteStu/{stuId}"})
+    public String deleteStu(@PathVariable("stuId") int stuId){
+        int result=stuService.deleteStuById(stuId);
+        if(result>=0)
+            return "redirect:/admin/stulist/0";
+        else {
+            //TODO
+            return "";
+        }
+    }
+
+
 }
