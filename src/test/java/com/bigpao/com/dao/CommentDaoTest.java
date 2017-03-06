@@ -56,5 +56,22 @@ public class CommentDaoTest {
         commentDao.deleteComment(comment);
     }
 
+    /**
+     * CommentDao.getCommentNumber()测试
+     */
+    @Test
+    public void CourseNumberTest(){
+        commentDao.getCommentNumber();
+    }
+
+
+    /**
+     * CommentDao.selectLimitComment测试
+     */
+    @Test
+    public void selectLimitCommentTest(){
+        System.out.println(commentDao.selectLimitComment(0,10));
+    }
+
 
 }

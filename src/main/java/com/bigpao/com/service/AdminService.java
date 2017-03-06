@@ -33,4 +33,10 @@ public class AdminService {
     public int findAdminNumber(){
         return adminDao.getAdminNumber();
     }
+
+
+    public List<Admin> findAdminByadminIdAndadminPassword(String adminName, String adminPassword){
+        // return adminDao.findAdminByadminNameAndadminPassword(adminName,adminPassword);
+        return  adminDao.findAdminByadminNameAndadminPassword(adminName,adminPassword);
+    }
 }
