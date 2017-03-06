@@ -1,7 +1,6 @@
 package com.bigpao.com.controller.admin;
 
-import com.bigpao.com.service.AdminService;
-import com.bigpao.com.service.TeachService;
+import com.bigpao.com.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +21,15 @@ public class HomeController {
 
     @Autowired
     TeachService teachService;
+
+    @Autowired
+    StuService stuService;
+
+    @Autowired
+    CourseService courseService;
+
+    @Autowired
+    CommentService commentService;
 
 
     /**
@@ -61,4 +69,64 @@ public class HomeController {
         model.addAttribute("offsetPage",offsetPage);
         return "admin/teachlist";
     }
+
+    /**
+     * 学生列表
+     * @param offsetPage
+     * @param model
+     * @return 返回学生列表页面
+     */
+    @RequestMapping({"/admin/stulist/{offsetPage}"})
+    public String getStuList(@PathVariable("offsetPage") int offsetPage,
+                               Model model){
+        model.addAttribute("stuNum",stuService.findStuNumber());
+        model.addAttribute("stuList",stuService.findLimitStu(offsetPage));
+        model.addAttribute("offsetPage",offsetPage);
+        return "admin/stulist";
+    }
+
+
+    /**
+     * 课程列表
+     * @param offsetPage
+     * @param model
+     * @return 返回课程列表页面
+     */
+    @RequestMapping({"/admin/courselist/{offsetPage}"})
+    public String getCourseList(@PathVariable("offsetPage") int offsetPage,
+                             Model model){
+        model.addAttribute("mapNum",courseService.findCourseNumber());
+        model.addAttribute("mapList",courseService.findLimitCourse(offsetPage));
+        model.addAttribute("offsetPage",offsetPage);
+        return "admin/courselist";
+    }
+
+
+    /**
+     * 评论列表
+     * @param offsetPage
+     * @param model
+     * @return 返回评论列表页面
+     */
+    @RequestMapping({"/admin/commentlist/{offsetPage}"})
+    public String getCommentList(@PathVariable("offsetPage") int offsetPage,
+                                Model model){
+        model.addAttribute("mapNum",commentService.findCommentNumber());
+        model.addAttribute("mapList", commentService.findLimitComment(offsetPage));
+        model.addAttribute("offsetPage",offsetPage);
+        return "admin/commentlist";
+    }
+
+    @RequestMapping({"admin/deleteStu/{stuId}"})
+    public String deleteStu(@PathVariable("stuId") int stuId){
+        int result=stuService.deleteStuById(stuId);
+        if(result>=0)
+            return "redirect:/admin/stulist/0";
+        else {
+            //TODO
+            return "";
+        }
+    }
+
+
 }

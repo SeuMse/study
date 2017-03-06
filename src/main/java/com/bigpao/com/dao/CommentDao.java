@@ -2,12 +2,10 @@ package com.bigpao.com.dao;
 
 import com.bigpao.com.model.Comment;
 import com.bigpao.com.model.Course;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -49,4 +47,21 @@ public interface CommentDao {
      */
     @Delete({"delete from",TABLE_NAME,"where comment_id=#{commentId}"})
     int deleteComment(Comment comment);
+
+    /**
+     * 查询全部评论的数量
+     * @return int
+     */
+    @Select({"select count(comment_id) from",TABLE_NAME})
+    int getCommentNumber();
+
+
+    /**
+     * 分页查询全部评论
+     * @param offset 偏移值
+     * @param limit   一页评论数量
+     * @return List<Course>
+     */
+    List<HashMap> selectLimitComment(@Param("offset") int offset, @Param(value = "limit") int limit);
+
 }
