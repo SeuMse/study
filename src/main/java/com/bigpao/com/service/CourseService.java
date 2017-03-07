@@ -6,13 +6,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
  * Created by hzdmm on 2017/3/6.
+=======
+import com.bigpao.com.model.Stu;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
+import java.util.List;
+
+/**
+ * Created by chen wang on 2017/3/3.
+>>>>>>> seu/hzdmm123
  */
 @Service
 public class CourseService {
+
     @Autowired
     private CourseDao courseDao;
 
@@ -27,4 +40,25 @@ public class CourseService {
     public List<Course> findCourseListBySort(String courseSort){
         return courseDao.findCourseListBySort(courseSort);
     }
+
+
+    /**
+     * 分页查询课程
+     * @param offset  偏移值
+     * @return List<Course>
+     */
+    public List<HashMap> findLimitCourse(int offset){
+        int limit=10;
+        return courseDao.selectLimitCourse(offset*limit,limit);
+    }
+
+    /**
+     * 查询课程的数量
+     * @return int
+     */
+    public int findCourseNumber(){
+        return courseDao.getCourseNumber();
+    }
+
+
 }

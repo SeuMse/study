@@ -1,7 +1,7 @@
 package com.bigpao.com.controller.admin;
 
 import com.bigpao.com.model.Admin;
-import com.bigpao.com.service.admin.AdminService;
+import com.bigpao.com.service.AdminService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,7 +13,7 @@ import java.util.List;
  * Created by hzdmm on 2017/3/2.
  */
 @Controller
-public class adminController {
+public class AdminController {
 
     @Autowired
     private AdminService AdminService;
