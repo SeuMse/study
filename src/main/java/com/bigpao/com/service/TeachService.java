@@ -35,4 +35,12 @@ public class TeachService {
     public int findTeachNumber(){
         return teachDao.getTeachNumber();
     }
+
+    /**
+     * 查询全部教师
+     * @return  List<Teach>
+     */
+    public List<Teach> findTeach(){
+        return teachDao.selectTeachs();
+    }
 }
