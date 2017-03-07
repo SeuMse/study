@@ -33,4 +33,19 @@ public class AdminService {
     public int findAdminNumber(){
         return adminDao.getAdminNumber();
     }
+
+    /**
+     * 查是否存在管理员
+     * @param adminName
+     * @param adminPassword
+     * @return 查询到的list
+     */
+    public List<Admin> findAdminByadminIdAndadminPassword(String adminName, String adminPassword){
+        // return adminDao.findAdminByadminNameAndadminPassword(adminName,adminPassword);
+        return  adminDao.findAdminByadminNameAndadminPassword(adminName,adminPassword);
+    }
+
+
+
+
 }

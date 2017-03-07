@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>课程列表</title>
+<meta charset="utf-8">
+
+<link rel="stylesheet" type="text/css" href="../lesson/css/reset.css">
+<link rel="stylesheet" type="text/css"  href="../lesson/css/global.css">
+<link rel="stylesheet" type="text/css"  href="../lesson/css/web.css">
+
+</head>
+<body class="W-body">
+
+
+<header id="header">
+	<section class="container">
+		
+		<div class="h-r-nsl">
+			<ul class="nav">
+				<li><a href="/admin/login" title="首页" >首页</a></li>
+				<li><a href="lesson mode.html" title="课程" >课程</a></li>
+				<li><a href="teacherlist" title="名师" >名师</a></li>
+				  <li><a>问答</a></li>
+				</ul>
+			
+			
+
+		</div>
+		<aside class="mw-nav-btn">
+			<div class="mw-nav-icon"></div>
+		</aside>
+		<div class="clear"></div>
+	</section>
+</header>
+
+
+	
+		
+	<div id="aCoursesList" class="bg-fa of">
+		<!-- /课程列表 开始 -->
+		<section class="container">
+			<header class="comm-title">
+				<h2 class="fl tac">
+					<span class="c-333">全部课程</span>
+				</h2>
+			</header>
+			<section class="c-sort-box">
+				<section class="c-s-dl">
+					<dl>
+						<dt>
+							<span class="c-999 fsize14">按班型</span>
+						</dt>
+						<dd class="c-s-dl-li">
+							<ul class="clearfix">
+								<li class="current"><a onclick="" title="全部" href="/courselist">全部</a></li>
+								<li ><a onclick="" title="java" href="/courselist/java">java</a></li>
+								<li ><a onclick="" title="Java web" href="/courselist/web">web</a></li>
+							<aside class="c-s-more">
+								<a href="" title="" class="fsize14 c-master">[展开]</a> 
+							</aside>
+						</dd>
+					</dl>
+<!--					<dl>
+						<dt>
+							<span class="c-999 fsize14">按讲师</span>
+						</dt>
+						<dd class="c-s-dl-li">
+							<ul class="clearfix">
+								<li class="current"><a onclick="" title="全部" href="">全部</a></li>
+								<li ><a title="陈晓薇" onclick="" href="">陈晓薇</a></li>
+								<li ><a title="陈红" onclick="" href="">陈红</a></li>
+								<li ><a title="李立" onclick="" href="">李立</a></li>
+								<li ><a title="李诚" onclick="" href="">李诚</a></li>
+								<li ><a title="王健化" onclick="" href="">王健化</a></li>
+							
+								</ul>
+							<aside class="c-s-more">
+								<a href="" title="" class="fsize14 c-master">[展开]</a>
+							</aside>
+						</dd>
+					</dl>-->
+					<div class="clear"></div>
+				</section>
+				<div class="js-wrap">
+					<section class="fr">
+						<span class="c-ccc"> <tt class="c-master f-fM">1</tt>/<tt class="c-666 f-fM">2</tt>
+						</span>
+					</section>
+					
+				</div>
+				<div class="mt40">
+					<article class="comm-course-list">
+							<ul class="of">
+
+							#foreach($course in $courseList)
+								<li>
+										<div class="cc-l-wrap">
+											<section class="course-img">
+												<img src="../lesson/imags/1442295455437.jpg" class="img-responsive" alt="">   <!--编辑图片-->
+													<div class="cc-mask">
+													<a href="" title="" class="comm-btn c-btn-1">$!{course.courseName}</a>
+												</div>
+											</section>
+											<h3 class="hLh30 txtOf mt10">
+												<a href="" title="$!{course.courseName}" class="course-title fsize18 c-333">$!{course.courseName}</a>
+											</h3>
+											<section class="mt10 hLh20 of">
+												<span class="fr jgTag bg-green"><tt class="c-fff fsize12 f-fA">$!{course.courseName}</tt></span>
+												<span class="fl jgAttr c-ccc f-fA"> <tt class="c-999 f-fA">$!{course.courseIntroduce}</tt> | <tt class="c-999 f-fA">134浏览</tt>
+												</span>
+											</section>
+										</div>
+								</li>
+								#end
+								<!--<li>
+								<div class="cc-l-wrap">
+											<section class="course-img">
+												<img src="../lesson/imags/1442295527931.jpg" class="img-responsive" alt="">   &lt;!&ndash;编辑图片&ndash;&gt;
+													<div class="cc-mask">
+													<a href="" title="" class="comm-btn c-btn-1">开始学习</a>
+												</div>
+											</section>
+											<h3 class="hLh30 txtOf mt10">
+											<a href="" title="XHTML CSS2 JS整站制作教程课程学习" class="course-title fsize18 c-333">XHTML CSS2 JS整站制作教程课程学习</a>
+											</h3>
+											<section class="mt10 hLh20 of">
+												<span class="fr jgTag bg-green"><tt class="c-fff fsize12 f-fA">免费</tt></span>
+												<span class="fl jgAttr c-ccc f-fA"> <tt class="c-999 f-fA">3人学习</tt> | <tt class="c-999 f-fA">14浏览</tt>
+												</span>
+											</section>
+										</div>
+								</li>
+										
+								
+				                       <li>
+										<div class="cc-l-wrap">
+											<section class="course-img">
+												<img src="../lesson/imags/1442295556203.jpg" class="img-responsive" alt="">
+													<div class="cc-mask">
+													<a href="" title="" class="comm-btn c-btn-1">开始学习</a>
+												</div>
+											</section>
+											<h3 class="hLh30 txtOf mt10">
+												<a href="h" title="HTML5入门课程学习" class="course-title fsize18 c-333">HTML5入门课程学习</a>
+											</h3>
+											<section class="mt10 hLh20 of">
+												<span class="fr jgTag bg-green"><tt class="c-fff fsize12 f-fA">免费</tt></span>
+												<span class="fl jgAttr c-ccc f-fA"> <tt class="c-999 f-fA">0人学习</tt> | <tt class="c-999 f-fA">23浏览</tt>
+												</span>
+											</section>
+										</div>
+									</li>
+								
+								<li>
+										<div class="cc-l-wrap">
+											<section class="course-img">
+												<img src="../lesson/imags/1442295570359.jpg" class="img-responsive" alt="">
+													<div class="cc-mask">
+													<a href="" title="" class="comm-btn c-btn-1">开始学习</a>
+												</div>
+											</section>
+											<h3 class="hLh30 txtOf mt10">
+												<a href="" title="MySql从入门到精通" class="course-title fsize18 c-333">MySql从入门到精通</a>
+											</h3>
+											<section class="mt10 hLh20 of">
+												<span class="fr jgTag bg-green"><tt class="c-fff fsize12 f-fA">免费</tt></span>
+												<span class="fl jgAttr c-ccc f-fA"> <tt class="c-999 f-fA">34人学习</tt> | <tt class="c-999 f-fA">126浏览</tt>
+												</span>
+											</section>
+										</div>
+									</li>
+								<li>
+										<div class="cc-l-wrap">
+											<section class="course-img">
+												<img src="../lesson/imags/1442295581911.jpg" class="img-responsive" alt="">
+													<div class="cc-mask">
+													<a href="" title="" class="comm-btn c-btn-1">开始学习</a>
+												</div>
+											</section>
+											<h3 class="hLh30 txtOf mt10">
+												<a href="" title="Java精品课程" class="course-title fsize18 c-333">Java精品课程</a>
+											</h3>
+											<section class="mt10 hLh20 of">
+												<span class="fr jgTag bg-green"><tt class="c-fff fsize12 f-fA">免费</tt></span>
+												<span class="fl jgAttr c-ccc f-fA"> <tt class="c-999 f-fA">150人学习</tt> | <tt class="c-999 f-fA">506浏览</tt>
+												</span>
+											</section>
+										</div>
+									</li>-->
+							
+								
+								</ul>
+							<div class="clear"></div>
+						</article>
+					</div>
+				<!-- 公共分页 开始 <script type="text/javascript" src="http://127.0.0.1:82/static/common/web/js/page.js"></script>-->
+
+<div class="paging"> 
+		<a href="javascript:goPage(1);" title="">首</a>
+		<a id="backpage" class="undisable" href="javascript:void(0)" title="">&lt;</a>
+			<a id="nextpage" href="javascript:goPage(2);" title="">&gt;</a>
+			<a href="javascript:goPage(2);" title="">末</a>
+		<div class="clear"></div>
+	</div>
+
+
+<script type="text/javascript">
+    var totalPageSize =2;
+    var currentPage =
+    0<1 ? 1 :1;
+    var totalPage = 2;
+    showPageNumber();
+</script><!-- 公共分页 结束 -->
+				<form action="" id="searchForm" method="post">
+					<input type="hidden" id="pageCurrentPage" name="page.currentPage" value="1" />
+					<input type="hidden" name="queryCourse.teacherId" value="0" />
+					<input type="hidden" name="queryCourse.subjectId" value="0" />
+					<input type="hidden" name="queryCourse.order" value="" />
+				</form>
+			</section>
+		</section>
+		<!-- /课程列表 结束 -->
+	</div>
+	<script>
+		$(function() {
+			cSortFun(); //分类更多按钮交互效果
+			scrollLoad(); //响应滚动加载课程图片
+		});
+		//sort suMore
+		var cSortFun = function() {
+		    $(".c-s-dl>dl .c-s-more>a").each(function() {
+		        var _this = $(this),
+		            _uList = _this.parent().siblings("ul"),
+		            _uLw = _uList.height();
+		        if (_uLw <= "40") {
+		            _this.hide();
+		        } else {
+		            _uList.css("height","40px");
+		            _this.click(function() {
+		                if(_this.html() == "[展开]") {
+		                    _uList.css("height","auto");
+		                    _this.text("[收起]");
+		                } else {
+		                    _uList.css("height" , "40px");
+		                    _this.text("[展开]");
+		                }
+		            })
+		        }
+		    });
+		}
+	</script>
+<!-- 公共底引入 -->
+	
+<!-- 公共底引入 -->
+	</div>
+
+	<!-- 统计代码 -->
+	</body>
+</html>

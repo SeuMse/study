@@ -22,4 +22,7 @@ public interface CourseDao {
 
     @Select({"select",SELECT_FIELDS,"from",TABLE_NAME})
     List<Course> seleceAllCourse();
+
+    @Select({"select",SELECT_FIELDS,"from",TABLE_NAME," where course_sort=#{courseSort}"})
+    List<Course> findCourseListBySort(String courseSort);
 }
