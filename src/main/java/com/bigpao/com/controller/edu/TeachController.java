@@ -1,5 +1,6 @@
 package com.bigpao.com.controller.edu;
 
+import com.bigpao.com.service.CourseService;
 import com.bigpao.com.service.TeachService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,9 @@ public class TeachController {
     @Autowired
     TeachService teachService;
 
+    @Autowired
+    CourseService courseService;
+
     /**
      * 教师列表
      * @param model
@@ -25,6 +29,19 @@ public class TeachController {
         //model.addAttribute("teachNum",teachService.findTeachNumber());
         model.addAttribute("teachList",teachService.findTeach());
         //model.addAttribute("offsetPage",offsetPage);
+        return "teachList";
+    }
+
+    /**
+     * 教师页面
+     * @param teachId
+     * @param model
+     * @return  返回教师页面
+     */
+    @RequestMapping({"/teacher/{teachId}"})
+    public String getTeach(@PathVariable("teachId") int teachId, Model model){
+        model.addAttribute("teach",teachService.selectTeachById(teachId));
+        model.addAttribute("courseList",courseService.findCourseByTeachId(teachId));
         return "teacher";
     }
 }

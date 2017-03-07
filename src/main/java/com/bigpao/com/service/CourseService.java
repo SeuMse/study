@@ -36,4 +36,13 @@ public class CourseService {
     }
 
 
+    /**
+     * 根据teachId查找教师的课程
+     * @param teachId
+     * @return List<Course>
+     */
+    public List<Course> findCourseByTeachId(int teachId){
+        return courseDao.selectCourseByTeachId(teachId);
+    }
+
 }

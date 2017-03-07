@@ -81,4 +81,13 @@ public class TeachDaoTest {
     public void selectLimitTeachTest(){
         teachDao.selectLimitTeach(0,10);
     }
+
+
+    /**
+     * TeachDao.selectTeachById(int teachId)测试
+     */
+    @Test
+    public void selectTeachById(){
+        teachDao.selectTeachById(1);
+    }
 }

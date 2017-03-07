@@ -2,6 +2,7 @@ package com.bigpao.com.service;
 
 import com.bigpao.com.dao.TeachDao;
 import com.bigpao.com.model.Admin;
+import com.bigpao.com.model.Course;
 import com.bigpao.com.model.Teach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,4 +44,16 @@ public class TeachService {
     public List<Teach> findTeach(){
         return teachDao.selectTeachs();
     }
+
+    /**
+     * 根据教师id查找
+     * @param teachId
+     * @return Teach
+     */
+    public Teach selectTeachById(int teachId){
+        return teachDao.selectTeachById(teachId);
+    }
+
+
+
 }

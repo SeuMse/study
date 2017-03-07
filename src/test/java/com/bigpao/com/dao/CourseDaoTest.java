@@ -32,4 +32,12 @@ public class CourseDaoTest {
     public void selectLimitCourseTest(){
         System.out.println(courseDao.selectLimitCourse(0,10));
     }
+
+    /**
+     * CourseDao.selectCourseByTeachId测试
+     */
+    @Test
+    public void selectCourseByTeachId(){
+        courseDao.selectCourseByTeachId(1);
+    }
 }

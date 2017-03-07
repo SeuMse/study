@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>教师列表</title>
+
+
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css"  href="css/global.css">
+<link rel="stylesheet" type="text/css"  href="css/web.css">
+
+
+</head>
+
+
+<body>
+
+<header id="header">
+	<section class="container">
+		
+		<div class="h-r-nsl">
+			<ul class="nav">
+				<li><a href="../index.html" title="首页" >首页</a></li>
+				<li><a href="../lesson/lesson mode.html" title="课程" >课程</a></li>
+				<li><a href="teachlist" title="名师" >名师</a></li>
+				  <li><a>问答</a></li>
+				</ul>
+			
+			
+
+		</div>
+		<aside class="mw-nav-btn">
+			<div class="mw-nav-icon"></div>
+		</aside>
+		<div class="clear"></div>
+	</section>
+</header>
+
+
+<body class="W-body">
+
+<div id="aCoursesList" class="bg-fa of">
+		<!-- /课程列表 开始 -->
+		<section class="container">
+			<header class="comm-title all-teacher-title">
+				<h2 class="fl tac">
+					<span class="c-333">全部讲师</span>
+				</h2>
+				<section class="c-tab-title" hidden>
+					<a id="subjectAll" title="全部" href="teachList.html"></a>
+					<a id="223" title="数据库" href="" onclick=""> </a>
+					<a id="223" title="数据库" href="" onclick=""> </a>
+					<a id="223" title="数据库" href="" onclick=""> </a>
+					<a id="223" title="数据库" href="" onclick=""> </a>
+					<a id="223" title="数据库" href="" onclick=""> </a>
+					<a id="223" title="数据库" href="" onclick=""> </a>
+					
+					</section>
+			</header>
+			<section class="c-sort-box unBr">
+				<div>
+					<!-- /无数据提示 开始-->
+					<!-- /无数据提示 结束-->
+					<article class="i-teacher-list">
+						<ul class="of">
+							<!--<li>
+										<section class="i-teach-wrap">
+											<div class="i-teach-pic">
+												<a href="" title="陈晓薇">
+													<img  src="新建文件夹/picture.png" alt="">
+														</a>
+											</div>
+											<div class="mt10 hLh30 txtOf tac">
+												<a href="http://127.0.0.1:82/front/teacher/83" title="算法皮" class="fsize18 c-666">算法皮</a>
+											</div>
+											<div class="hLh30 txtOf tac">
+												<span class="fsize14 c-999">北京师范大学算法学院副教授、清华大学算法学博士。精通算法，深入浅出。</span>
+											</div>
+											<div class="mt15 i-q-txt">
+												<p class="c-999 f-fA">北京师范大学算法学院副教授</p>
+											</div>
+										</section>
+									</li>
+							
+							<li>
+										<section class="i-teach-wrap">
+											<div class="i-teach-pic">
+												<a href="" title="陈晓薇">
+													<img  src="新建文件夹/[PQ11D2U%EWI9IC@SCZKE@A.png" alt="">
+														</a>
+											</div>
+											<div class="mt10 hLh30 txtOf tac">
+												<a href="http://127.0.0.1:82/front/teacher/83" title="leader王" class="fsize18 c-666">leader王</a>
+											</div>
+											<div class="hLh30 txtOf tac">
+												<span class="fsize14 c-999">十年课程研发和培训咨询经验，曾任国企人力资源经理、大型外企培训经理，负责企业大学和培训体系搭建；曾任专业培训机构高级顾问、研发部总监，为包括广东移动、东莞移动、深圳移动、南方电网、工商银行、农业银行、民生银行、邮储银行、TCL集团、清华大学继续教育学院、中天路桥、广西扬翔股份等超过200家企业提供过培训与咨询服务，并担任近50个大型项目的总负责人。，深入浅出。</span>
+											</div>
+											<div class="mt15 i-q-txt">
+												<p class="c-999 f-fA">资深课程设计专家，专注10年AACTP美国培训协会认证导师</p>
+											</div>
+										</section>
+									</li>
+								-->
+							#foreach($teach in $teachList)
+							<li>
+								<section class="i-teach-wrap">
+									<div class="i-teach-pic">
+										<a href="" title="陈晓薇">
+											<img  src="新建文件夹/QPK441{YL]@P%]SNEP2{0Q2.png" alt="">
+										</a>
+									</div>
+									<div class="mt10 hLh30 txtOf tac">
+										<a href="/teacher/$!{teach.teachId}" title="算法皮" class="fsize18 c-666">$!{teach.teachName}</a>
+									</div>
+									<!--<div class="hLh30 txtOf tac">
+										<span class="fsize14 c-999">北京师范大学算法学院副教授、清华大学算法学博士。精通算法，深入浅出。</span>
+									</div>-->
+									<div class="mt15 i-q-txt">
+										<p class="c-999 f-fA">$!{teach.teachIntroduce}</p>
+									</div>
+								</section>
+							</li>
+							#end
+								
+								
+								</ul>
+						<div class="clear"></div>
+					</article>
+				</div>
+				<!-- 公共分页 开始 -->
+				<div>
+					<form action="http://127.0.0.1:82/front/teacherlist" method="post" id="searchForm">
+						<input type="hidden" name="page.currentPage" id="pageCurrentPage" value="1">
+						<input type="hidden" name="queryTeacher.subjectId" id="" value="0">
+					</form>
+				<!--	<script type="text/javascript" src="../js/page.js"></script>-->
+<div class="paging"> 
+		<a href="javascript:goPage(1);" title="">首</a>
+		<a id="backpage" class="undisable" href="javascript:void(0)" title="">&lt;</a>
+			<a id="nextpage" href="javascript:goPage(2);" title="">&gt;</a>
+			<a href="javascript:goPage(2);" title="">末</a>
+		<div class="clear"></div>
+	</div>
+
+
+<script type="text/javascript">
+    var totalPageSize =2;
+    var currentPage =
+    0<1 ? 1 :1;
+    var totalPage = 2;
+    showPageNumber();
+</script></div>
+				<!-- 公共分页 结束 -->
+			</section>
+		</section>
+		<!-- /课程列表 结束 -->
+	</div>
+<script type="text/javascript">
+	$(function() {
+		if ('0' == null || '0' == 0) {
+			$("#subjectAll").addClass("current");
+		}else{
+			$("#0").addClass("current");
+		};
+		scrollLoad(); //响应滚动加载课程图片
+	})
+	
+	/**
+	 * 条件查询
+	 */
+	function submitForm(val){
+		$("input[name='queryTeacher.subjectId']").val(val);
+		$("#searchForm").submit();
+	}
+</script>
+<!-- 公共底引入 -->
+		<footer id="footer">
+	<section class="container">
+		<div class="">
+			<h4 class="hLh30">
+				<span class="fsize18 f-fM c-999">友情链接</span>
+			</h4>
+			<ul class="of flink-list">
+				<li><a href="http://www.inxedu.com" title="因酷时代" target="_blank">因酷时代</a></li>
+				</ul>
+			<div class="clear"></div>
+		</div>
+		<div class="b-foot">
+			<section class="fl col-7">
+				<section class="mr20">
+					<section class="b-f-link">
+						<a href="/front/helpCenter?id=193" title="关于我们" target="_blank">关于我们</a>|
+								<a href="/front/helpCenter?id=194" title="联系我们" target="_blank">联系我们</a>|
+								<a href="#" title="成功案例" target="_blank">成功案例</a>|
+								<a href="/front/helpCenter" title="帮助中心" target="_blank">帮助中心</a>|
+								<span>服务热线：400-006-5079</span> <span>Email：xiejinlong@inxedu.com</span>
+					</section>
+					<section class="b-f-link mt10">
+						<span>©2010-2015 INXEDU有限公司 版权所有 京ICP备15017521号</span>
+					</section>
+				</section>
+			</section>
+			<aside class="fl col-3 tac mt15">
+				<section class="gf-tx">
+					<span><img src="http://127.0.0.1:82/static/inxweb/img/wx-icon.png" alt=""></span>
+					<div class="gf-tx-ewm">
+						<img src="http://127.0.0.1:82/images/upload/image/20150908/1441801228269.png" alt="">
+						</div>
+				</section>
+				<section class="gf-tx">
+					<span><img src="http://127.0.0.1:82/static/inxweb/img/wb-icon.png" alt=""></span>
+					<div class="gf-tx-ewm">
+					<img src="http://127.0.0.1:82/images/upload/image/20150908/1441801298938.png" alt="">
+						</div>
+				</section>
+			</aside>
+			<div class="clear"></div>
+		</div>
+	</section>
+</footer>
+<div class="r-fixed-wrap">
+	<ul class="r-fixed-ul">
+		<li id="goTopBtn" class="undis">
+			<a href="javascript: void(0)" title="返回顶部" class="bg-orange">
+				<em class="r-f-icon-3">&nbsp;</em><span>返回顶部</span>
+			</a>
+		</li>
+		<li class="foot-zixun">
+			<a href="" title="在线咨询" class="bg-orange">
+				<em class="r-f-icon-1">&nbsp;</em><span>在线咨询</span>
+			</a>
+		</li>
+		<li class="foot-zixun">
+			<a href="" title="扫描关注" class="bg-orange">
+				<em class="r-f-icon-2">&nbsp;</em><span>扫描关注</span>
+			</a>
+		</li>
+	</ul>
+</div>
+<!-- 公共底引入 -->
+	</div>
+
+	<!-- 统计代码 -->
+	</body>
+</html>
+
+</body>
+</html>

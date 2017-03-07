@@ -46,4 +46,13 @@ public interface CourseDao {
             "limit #{offset},#{limit}"})*/
     List<HashMap> selectLimitCourse(@Param("offset") int offset, @Param(value = "limit") int limit);
 
+
+    /**
+     * 根据teachId查找教师的课程
+     * @param teachId
+     * @return List<Course>
+     */
+    @Select({"select",SELECT_FIELDS,"from",TABLE_NAME,"where teach_id=#{teachId}"})
+    List<Course> selectCourseByTeachId(int teachId);
+
 }

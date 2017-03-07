@@ -73,4 +73,12 @@ public interface TeachDao {
      */
     @Select({"select",ADMIN_SELECT_FIELDS,"from",TABLE_NAME,"limit #{offset},#{limit}"})
     List<Teach> selectLimitTeach(@Param("offset") int offset, @Param(value = "limit") int limit);
+
+    /**
+     * 根据教师id查找
+     * @param teachId
+     * @return Teach
+     */
+    @Select({"select",SELECT_FIELDS,"from",TABLE_NAME,"where teach_id=#{teachId}"})
+    Teach selectTeachById(int teachId);
 }
